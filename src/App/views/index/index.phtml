@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Sample layout
+ */
+
+use \Framework\Locale;
+use \Framework\Box;
+
+?>
+<div class="jumbotron">
+    <h1><?php echo Box::$data['title'] ?></h1>
+    <hr/>
+    <p><?php echo Box::$data['welcome_message'] ?></p>
+
+    <p>
+        <a class="btn btn-md btn-success" href="<?php echo BASE_URL; ?>/index/subpage">
+            <?php echo Locale::show('open_subpage', 'Index'); ?>
+        </a>
+        <a class="btn btn-md btn-success" href="<?php echo BASE_URL; ?>/sample-module">
+            <?php echo Locale::show('open_module', 'Index'); ?>
+        </a>
+    </p>
+</div>

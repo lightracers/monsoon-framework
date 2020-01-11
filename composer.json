@@ -1,0 +1,38 @@
+{
+    "name": "monsoon/framework",
+    "description": "A Simple and Rapid MVC Framework in PHP",
+    "version": "1.0",
+    "type": "project",
+    "keywords": ["monsoonphp", "php7", "framework"],
+    "homepage": "https://monsoonphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lightracers Consulting",
+            "email": "info@lightracers.in"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "psr/http-message": "^1.0",
+        "robmorgan/phinx": "dev-master"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "dev-master",
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "phpunit/phpunit": "@stable",
+        "pdepend/pdepend": "^2.5",
+        "phpmd/phpmd": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

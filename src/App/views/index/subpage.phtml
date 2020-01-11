@@ -1,0 +1,19 @@
+<?php
+/**
+ * Sample layout
+ */
+
+use \Framework\Locale;
+use \Framework\Box;
+
+?>
+
+<div class="jumbotron">
+  <h1><?php echo Box::$data['title'] ?></h1>
+  <hr />
+  <p><?php echo Box::$data['welcome_message'] ?></p>
+
+  <a class="btn btn-md btn-success" href="<?php echo BASE_URL; ?>/index">
+    <?php echo Locale::show('back_home', 'Index'); ?>
+</a>
+</div>

@@ -1,0 +1,9 @@
+monsoon:
+  container_name: monsoon_framework
+  build: .
+  dockerfile: data/docker/Dockerfile
+  ports:
+  - "8080:80"
+  working_dir: /var/www
+  volumes:
+  - .:/var/www

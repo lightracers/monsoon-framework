@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+/* Console classes */
+use Cli\Welcome;
+
+$app = new Application();
+
+/*
+ * Add Classes
+ */
+$app->add(new Welcome());
+
+$app->run();

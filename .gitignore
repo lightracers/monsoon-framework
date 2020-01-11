@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+composer.lock
+/src/Config/.env.php
+/data/logs/*.log
+/data/logs/api/*.log
+/vendor
+/node_modules
