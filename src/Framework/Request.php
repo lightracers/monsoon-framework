@@ -68,7 +68,10 @@ class Request
 
     public static function files($fieldNames)
     {
-        // validations
+        //from App/Config/Config.php
+        $maxFileSizeAllowed = Box::getApplication('uploadMaxFilesize');
+
+        //validations
         if (empty($_FILES[$fieldNames])) {
             return false;
         } else if ($_FILES[$fieldNames]['name'] == '' || $_FILES[$fieldNames]['tmp_name'] == '') {
@@ -77,9 +80,8 @@ class Request
             return false;
         } else if ($_FILES[$fieldNames]['error'] != '') {
             return ['error' => $_FILES[$fieldNames]['error']];
-        } else if ($_FILES[$fieldNames]['size'] > APPLICATION['UPLOAD_MAX_FILESIZE']) {
-// from app_config.php
-            return ['error' => 'File size exceeds maximum allowed size of ' . (APPLICATION['UPLOAD_MAX_FILESIZE'] / 1024 / 1024) . 'MB'];
+        } else if ($_FILES[$fieldNames]['size'] > $maxFileSizeAllowed) {
+            return ['error' => 'File size exceeds maximum allowed size of ' . ($maxFileSizeAllowed / 1024 / 1024) . 'MB'];
         } else if (Utilities::strposArray($_FILES[$fieldNames]['name'], ["/", "\\", '..', '"', "'"]) !== FALSE) {
             return ['error' => 'File name contains invalid characters'];
         } else {

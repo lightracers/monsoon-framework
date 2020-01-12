@@ -100,7 +100,7 @@ class Box
     }
 
     /**
-     * @return array
+     * @return mixed
      */
     public static function getApplication($key)
     {
