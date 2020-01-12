@@ -13,12 +13,14 @@ define('PROFILER_SNAPSHOT', ['time' => microtime(), 'memory' => memory_get_usage
 if (file_exists(__DIR__ . '/../vendor/autoload.php') === true) {
     include __DIR__ . '/../vendor/autoload.php';
 } else {
-    spl_autoload_register(function ($class) {
+    spl_autoload_register(
+        function ($class) {
         $file = __DIR__ . '/../src/' . str_replace('\\', '/', $class) . '.php';
         if (file_exists($file)) {
             require $file;
         }
-    });
+        }
+    );
 }
 
 /*

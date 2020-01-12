@@ -10,18 +10,20 @@ class Request
 {
     public static function input($paramName, $escapeHtml = true, $allowBasicFormatTags = false)
     {
-        $inputData = json_decode(file_get_contents('php://input'), true);
+        $inputData    = json_decode(file_get_contents('php://input'), true);
         $filteredData = [];
-        if(is_array($inputData)) {
+        if (is_array($inputData)) {
             foreach ($inputData as $key => $value) {
                 if (is_array($paramName) && in_array($key, $paramName)) {
                     $filteredData[$key] = Security::escapeString($inputData[$key], $escapeHtml, $allowBasicFormatTags);
                 }
+
                 if ($key == $paramName) {
                     $filteredData = Security::escapeString($inputData[$key], $escapeHtml, $allowBasicFormatTags);
                 }
             }
         }
+
         return $filteredData;
     }
 

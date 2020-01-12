@@ -55,11 +55,19 @@ abstract class Service
             $this->response->setStatusCode('401');
             $this->response->setReasonPhrase('Unauthorized');
         }
-        $this->logger->writeMessage(Security::getClientIP().' - - [' . date('c') . '] INFO', 'RESPONSE:', [
-            $this->response->getStatusCode(),
-            $this->response->getReasonPhrase(),
-            [$this->response->getData(), $this->response->getErrors()],
-        ]);
+
+        $this->logger->writeMessage(
+            Security::getClientIP().' - - [' . date('c') . '] INFO',
+            'RESPONSE:',
+            [
+                $this->response->getStatusCode(),
+                $this->response->getReasonPhrase(),
+                [
+                    $this->response->getData(),
+                    $this->response->getErrors(),
+                ],
+            ]
+        );
 
         $this->response->sendJsonResponse();
     }
