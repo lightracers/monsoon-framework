@@ -51,7 +51,7 @@ class Box
     /**
      * @param Identity $identity
      */
-    public static function setIdentity(Identity $identity)
+    public static function setIdentity($identity)
     {
         self::$identity = $identity;
     }
