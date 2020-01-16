@@ -143,7 +143,7 @@ class Session
      */
     public static function regenerate()
     {
-        session_regenerate_id(true);
+        session_regenerate_id();
         return session_id();
     }
 
