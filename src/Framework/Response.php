@@ -249,6 +249,23 @@ class Response
     }
 
     /**
+     * @param $filePath
+     * @param null $fileName
+     */
+    public function sendFile($filePath, $fileName = null)
+    {
+        if ($fileName == '') {
+            $fileName = basename($filePath);
+        }
+
+        header('Content-Type: application/octet-stream');
+        header("Content-Transfer-Encoding: Binary");
+        header("Content-disposition: attachment; filename=\"" . $fileName . "\"");
+        readfile($filePath);
+        exit;
+    }
+
+    /**
      * Redirect to chosen url.
      *
      * @param string $url
