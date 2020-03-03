@@ -1,6 +1,6 @@
 # Monsoon Framework
 
-Monsoon is a simple, fast and secure PHP MVC framework for your rapid application development (RAD) needs. Documentation is available at https://monsoonphp.com 
+Monsoon PHP is an open-source, simple, fast, secure and free PHP web framework that assists developers in creating a secure application rapidly (RAD). You can maintain your Application’s code, as well as your REST API and CLI based scripts in a single codebase with Monsoon. Documentation is available at https://monsoonphp.com 
 
 ## Getting Started
 
