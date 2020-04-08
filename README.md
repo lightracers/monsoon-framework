@@ -4,25 +4,35 @@ Monsoon PHP is an open-source, simple, fast, secure and free PHP web framework t
 
 ## Getting Started
 
+### Direct Download
+
 1. Download the framework as a zip file from Github repository or through composer
 2. Point your webserver's root to _public/_ folder 
 3. Access the URL from your browser
 
-## Available Features
+### Composer Download
 
-This framework readily supports Composer, Docker, Phinx and Gulp.
+1. Give the command in terminal ```composer create-project monsoon/framework .```
+2. Point your webserver's root to _public/_ folder 
+3. Access the URL from your browser
 
-### Composer is NOT mandatory
+## Available Tools from Composer
 
-The framework is designed to be Composer independent. But you can go ahead and start using composer out of the box by using ```composer install``` command.
+This framework uses following packages when you install as composer-project. 
 
-The framework can also be installed through composer with this command. 
+* phinx
+* php_codesniffer
+* phpunit
+* pdepend
+* phpmd
 
-```composer create-project monsoon/framework .```
+## Configuration File
 
-You can add your favourite Composer packages right away after you initialize composer. 
+Configuration file distributable file is available under ```src/Config/.env.php.dist```. Remove the .dist extension to get started. More configuration parameters can be setup in ```src/Config/Config.php```. 
 
-```composer require vendor/package```
+### Database migrations with Phinx
+
+Version your database changes with Phinx library. Run your migrations with this commands. See _phinx.php_ for predefined values. 
 
 ### Running on PHP server
 You can use PHP's internal webserver to run the application in your development system. Give this command in the terminal. The default URL will be http://localhost:8080
@@ -40,9 +50,6 @@ To run this framework in a docker container, give this command in terminal. Dock
 
 The default URL will be http://localhost:8080
 
-### Phinx
-
-Version your database changes with Phinx library. Run your migrations with this commands. See _phinx.php_ for predefined values. 
 
 ### Gulp
 You can install Gulp with NPM with these commands. See _gulpfile.js_ for configurations.
@@ -52,5 +59,3 @@ npm install
 
 gulp js|css|sass
 ```
-
-
