@@ -1,9 +1,12 @@
 {
     "name": "monsoon/framework",
     "description": "A Simple and Rapid MVC Framework in PHP",
-    "version": "1.0",
     "type": "project",
-    "keywords": ["monsoonphp", "php7", "framework"],
+    "keywords": [
+        "monsoonphp",
+        "php7",
+        "framework"
+    ],
     "homepage": "https://monsoonphp.com",
     "license": "MIT",
     "authors": [
