@@ -100,7 +100,7 @@ class Router
     public static function addCustomRoutes($routesList = [])
     {
         foreach ($routesList as $route => $callback) {
-            array_push(self::$routes, dirname($_SERVER['PHP_SELF']) . '/' . $route);
+            array_push(self::$routes, $route);
             array_push(self::$methods, 'ANY');
             array_push(self::$callbacks, $callback);
         }
